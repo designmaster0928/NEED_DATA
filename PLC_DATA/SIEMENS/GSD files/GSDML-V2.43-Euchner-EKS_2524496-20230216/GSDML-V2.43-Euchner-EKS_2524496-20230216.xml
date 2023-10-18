@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<ISO15745Profile xmlns="http://www.profibus.com/GSDML/2003/11/DeviceProfile" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.profibus.com/GSDML/2003/11/DeviceProfile ..\xsd\GSDML-DeviceProfile-V2.43.xsd">
+	<ProfileHeader>
+		<ProfileIdentification>PROFINET Device Profile</ProfileIdentification>
+		<ProfileRevision>1.00</ProfileRevision>
+		<ProfileName>Device Profile for PROFINET Devices</ProfileName>
+		<ProfileSource>PROFIBUS Nutzerorganisation e. V. (PNO)</ProfileSource>
+		<ProfileClassID>Device</ProfileClassID>
+		<ISO15745Reference>
+			<ISO15745Part>4</ISO15745Part>
+			<ISO15745Edition>1</ISO15745Edition>
+			<ProfileTechnology>GSDML</ProfileTechnology>
+		</ISO15745Reference>
+	</ProfileHeader>
+	<ProfileBody>
+		<DeviceIdentity VendorID="0x0135" DeviceID="0x0202">
+			<InfoText TextId="T_PROFINET_IO_DEV_DESCRIPTION"/>
+			<VendorName Value="Euchner GmbH + Co. KG"/>
+		</DeviceIdentity>
+		<DeviceFunction>
+			<Family MainFamily="I/O" ProductFamily="Euchner EKS"/>
+		</DeviceFunction>
+		<ApplicationProcess>
+			<DeviceAccessPointList>
+				<!-- ============================================ -->
+	            <!--                  DAP106306 EKS kompakt FSA        -->
+	            <!-- ============================================ -->
+				<DeviceAccessPointItem ID="DAP_106306" PhysicalSlots="0..2" ModuleIdentNumber="0x00000004" MinDeviceInterval="512" ImplementationType="ERTEC200P" DNS_CompatibleName="eks-pn" FixedInSlots="0" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" SharedDeviceSupported="true" DeviceAccessSupported="true" WebServer="http://:80" RequiredSchemaVersion="V2.31" MaxSupportedRecordSize="8192" NameOfStationNotTransferable="true" ParameterizationSpeedupSupported="true" LLDP_NoD_Supported="true" ResetToFactoryModes="2" PowerOnToCommReady="1500" CheckDeviceID_Allowed="true" NumberOfDeviceAccessAR="1" PNIO_Version="V2.34">
+					<ModuleInfo>
+						<Name TextId="TOK_EKS_106306" />
+						<InfoText TextId="TOK_ModInfo_InfoTextId_EKS_106306" />
+						<VendorName Value="Euchner GmbH + Co. KG" />
+						<OrderNumber Value="106306" />
+						<SoftwareRelease Value="V3.*.*" />
+					</ModuleInfo>
+					<CertificationInfo ConformanceClass="B" ApplicationClass="" NetloadClass="I"/>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000" />
+						<SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001" />
+					</SubslotList>
+					<IOConfigData MaxInputLength="266" MaxOutputLength="266" MaxDataLength="532"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_128" UsedInSlots="1" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_64" AllowedInSlots="1" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_32" AllowedInSlots="1" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_16" AllowedInSlots="1" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_8" AllowedInSlots="1" />
+
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_128" UsedInSlots="2" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_64" AllowedInSlots="2" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_32" AllowedInSlots="2" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_16" AllowedInSlots="2" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_8" AllowedInSlots="2" />
+						
+						<!--<ModuleItemRef ModuleItemTarget="IDM_EKS_SERIALNUMBER" UsedInSlots="3" /> -->
+						<!--<ModuleItemRef ModuleItemTarget="IDM_EKS_IO" UsedInSlots="4" /> -->
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP_106306" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="false">
+							<IOData  /> 
+							<ModuleInfo>
+								<Name TextId="TOK_EKS_106306" />
+								<InfoText TextId="TOK_ModInfo_InfoTextId_EKS_106306" />
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="IDS_106306I" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="TOK_DAP_InterfaceModule" PTP_BoundarySupported="true" DCP_BoundarySupported="true" IsochroneModeSupported="false" SupportedProtocols="SNMP;LLDP" NetworkComponentDiagnosisSupported="true" DCP_HelloSupported="true">
+							<ApplicationRelations NumberOfAR="2" StartupMode="Legacy;Advanced" NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="true">
+								<TimingProperties SendClock="32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+							</ApplicationRelations>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="IDS_106306P1" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="TOK_Port1" MaxPortRxDelay="198" MaxPortTxDelay="6" PortDeactivationSupported="false" LinkStateDiagnosisCapability="Up+Down">
+						<MAUTypeList>
+				<MAUTypeItem Value="16" AdjustSupported="true"/>
+				</MAUTypeList>
+				</PortSubmoduleItem>
+						</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ID_Graph_1" />
+					</Graphics>
+				</DeviceAccessPointItem>
+				<!-- ============================================ -->
+	            <!--                  DAP106305 EKS kompakt          -->
+	            <!-- ============================================ -->
+				<DeviceAccessPointItem ID="DAP_106305" PhysicalSlots="0..2" ModuleIdentNumber="0x00000004" MinDeviceInterval="512" ImplementationType="ERTEC200P" DNS_CompatibleName="eks-pn"  FixedInSlots="0" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" SharedDeviceSupported="true" DeviceAccessSupported="true" WebServer="http://:80" RequiredSchemaVersion="V2.31" MaxSupportedRecordSize="8192" NameOfStationNotTransferable="true" ParameterizationSpeedupSupported="true" LLDP_NoD_Supported="true" ResetToFactoryModes="2" PowerOnToCommReady="1500" CheckDeviceID_Allowed="true" NumberOfDeviceAccessAR="1" PNIO_Version="V2.34">
+					<ModuleInfo>
+						<Name TextId="TOK_EKS_106305" />
+						<InfoText TextId="TOK_ModInfo_InfoTextId_EKS_106305" />
+						<VendorName Value="Euchner GmbH + Co. KG" />
+						<OrderNumber Value="106305" />
+						<SoftwareRelease Value="V3.*.*" />
+					</ModuleInfo>
+					<CertificationInfo ConformanceClass="B" ApplicationClass="" NetloadClass="I"/>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000" />
+						<SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001" />
+					</SubslotList>
+					<IOConfigData MaxInputLength="266" MaxOutputLength="266" MaxDataLength="532"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_128" UsedInSlots="1" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_64" AllowedInSlots="1" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_32" AllowedInSlots="1" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_16" AllowedInSlots="1" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_8" AllowedInSlots="1" />
+
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_128" UsedInSlots="2" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_64" AllowedInSlots="2" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_32" AllowedInSlots="2" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_16" AllowedInSlots="2" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_8" AllowedInSlots="2" />
+						
+						<!--<ModuleItemRef ModuleItemTarget="IDM_EKS_SERIALNUMBER" UsedInSlots="3" /> -->
+						<!--<ModuleItemRef ModuleItemTarget="IDM_EKS_IO" UsedInSlots="4" /> -->
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP_106305" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="false">
+							<IOData /> 
+							<ModuleInfo>
+								<Name TextId="TOK_EKS_106305" />
+								<InfoText TextId="TOK_ModInfo_InfoTextId_EKS_106305" />
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="IDS_106305I" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="TOK_DAP_InterfaceModule" PTP_BoundarySupported="true" DCP_BoundarySupported="true" IsochroneModeSupported="false" SupportedProtocols="SNMP;LLDP" NetworkComponentDiagnosisSupported="true" DCP_HelloSupported="true">
+							<ApplicationRelations NumberOfAR="2" StartupMode="Legacy;Advanced" NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="true">
+								<TimingProperties SendClock="32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+							</ApplicationRelations>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="IDS_106305P1" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="TOK_Port1" MaxPortRxDelay="198" MaxPortTxDelay="6" PortDeactivationSupported="false" LinkStateDiagnosisCapability="Up+Down">
+						<MAUTypeList>
+				<MAUTypeItem Value="16" AdjustSupported="true"/>
+				</MAUTypeList>
+				</PortSubmoduleItem>
+						</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ID_Graph_1" />
+					</Graphics>
+				</DeviceAccessPointItem>
+				
+				
+				<!-- ============================================ -->
+	            <!--                  DAP122353 EKS modular FSA        -->
+	            <!-- ============================================ -->
+				<DeviceAccessPointItem ID="DAP_122353" PhysicalSlots="0..2" ModuleIdentNumber="0x00000004" MinDeviceInterval="512" ImplementationType="ERTEC200P" DNS_CompatibleName="eks-pn" FixedInSlots="0" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" SharedDeviceSupported="true" DeviceAccessSupported="true" WebServer="http://:80" RequiredSchemaVersion="V2.31" MaxSupportedRecordSize="8192" NameOfStationNotTransferable="true" ParameterizationSpeedupSupported="true" LLDP_NoD_Supported="true" ResetToFactoryModes="2" PowerOnToCommReady="1500" CheckDeviceID_Allowed="true" NumberOfDeviceAccessAR="1" PNIO_Version="V2.34">
+					<ModuleInfo>
+						<Name TextId="TOK_EKS_122353" />
+						<InfoText TextId="TOK_ModInfo_InfoTextId_EKS_122353" />
+						<VendorName Value="Euchner GmbH + Co. KG" />
+						<OrderNumber Value="122353" />
+						<SoftwareRelease Value="V1.*.*" />
+					</ModuleInfo>
+					<CertificationInfo ConformanceClass="B" ApplicationClass="" NetloadClass="I"/>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000" />
+						<SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001" />
+					</SubslotList>
+					<IOConfigData MaxInputLength="266" MaxOutputLength="266" MaxDataLength="532"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_128" UsedInSlots="1" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_64" AllowedInSlots="1" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_32" AllowedInSlots="1" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_16" AllowedInSlots="1" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_8" AllowedInSlots="1" />
+
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_128" UsedInSlots="2" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_64" AllowedInSlots="2" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_32" AllowedInSlots="2" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_16" AllowedInSlots="2" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_8" AllowedInSlots="2" />
+						
+						<!--<ModuleItemRef ModuleItemTarget="IDM_EKS_SERIALNUMBER" UsedInSlots="3" /> -->
+						<!--<ModuleItemRef ModuleItemTarget="IDM_EKS_IO" UsedInSlots="4" /> -->
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP_122353" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="false">
+							<IOData  /> 
+							<ModuleInfo>
+								<Name TextId="TOK_EKS_122353" />
+								<InfoText TextId="TOK_ModInfo_InfoTextId_EKS_122353" />
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="IDS_122353I" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="TOK_DAP_InterfaceModule" PTP_BoundarySupported="true" DCP_BoundarySupported="true" IsochroneModeSupported="false" SupportedProtocols="SNMP;LLDP" NetworkComponentDiagnosisSupported="true" DCP_HelloSupported="true">
+							<ApplicationRelations NumberOfAR="2" StartupMode="Legacy;Advanced" NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="true">
+								<TimingProperties SendClock="32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+							</ApplicationRelations>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="IDS_122353P1" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="TOK_Port1" MaxPortRxDelay="198" MaxPortTxDelay="6" PortDeactivationSupported="false" LinkStateDiagnosisCapability="Up+Down">
+						<MAUTypeList>
+				<MAUTypeItem Value="16" AdjustSupported="true"/>
+				</MAUTypeList>
+				</PortSubmoduleItem>
+						</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ID_Graph_2" />
+					</Graphics>
+				</DeviceAccessPointItem>
+				
+				<!-- ============================================ -->
+	            <!--                  DAP122352 EKS modular   -->
+	            <!-- ============================================ -->
+				<DeviceAccessPointItem ID="DAP_122352" PhysicalSlots="0..2" ModuleIdentNumber="0x00000004" MinDeviceInterval="512" ImplementationType="ERTEC200P" DNS_CompatibleName="eks-pn" FixedInSlots="0" ObjectUUID_LocalIndex="1" MultipleWriteSupported="true" SharedDeviceSupported="true" DeviceAccessSupported="true" WebServer="http://:80" RequiredSchemaVersion="V2.31" MaxSupportedRecordSize="8192" NameOfStationNotTransferable="true" ParameterizationSpeedupSupported="true" LLDP_NoD_Supported="true" ResetToFactoryModes="2" PowerOnToCommReady="1500" CheckDeviceID_Allowed="true" NumberOfDeviceAccessAR="1" PNIO_Version="V2.34">
+					<ModuleInfo>
+						<Name TextId="TOK_EKS_122352" />
+						<InfoText TextId="TOK_ModInfo_InfoTextId_EKS_122352" />
+						<VendorName Value="Euchner GmbH + Co. KG" />
+						<OrderNumber Value="122352" />
+						<SoftwareRelease Value="V1.*.*" />
+					</ModuleInfo>
+					<CertificationInfo ConformanceClass="B" ApplicationClass="" NetloadClass="I"/>
+					<SubslotList>
+						<SubslotItem SubslotNumber="32768" TextId="TOK_Subslot_8000" />
+						<SubslotItem SubslotNumber="32769" TextId="TOK_Subslot_8001" />
+					</SubslotList>
+					<IOConfigData MaxInputLength="266" MaxOutputLength="266" MaxDataLength="532"/>
+					<UseableModules>
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_128" UsedInSlots="1" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_64" AllowedInSlots="1" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_32" AllowedInSlots="1" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_16" AllowedInSlots="1" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_READ_8" AllowedInSlots="1" />
+
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_128" UsedInSlots="2" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_64" AllowedInSlots="2" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_32" AllowedInSlots="2" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_16" AllowedInSlots="2" />
+						<ModuleItemRef ModuleItemTarget="IDM_EKS_DATA_WRITE_8" AllowedInSlots="2" />
+						
+						<!--<ModuleItemRef ModuleItemTarget="IDM_EKS_SERIALNUMBER" UsedInSlots="3" /> -->
+						<!--<ModuleItemRef ModuleItemTarget="IDM_EKS_IO" UsedInSlots="4" /> -->
+					</UseableModules>
+					<VirtualSubmoduleList>
+						<VirtualSubmoduleItem ID="DAP_122352" SubmoduleIdentNumber="0x0001" Writeable_IM_Records="1 2 3 4" MayIssueProcessAlarm="false">
+							<IOData  /> 
+							<ModuleInfo>
+								<Name TextId="TOK_EKS_122352" />
+								<InfoText TextId="TOK_ModInfo_InfoTextId_EKS_122352" />
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+					<SystemDefinedSubmoduleList>
+						<InterfaceSubmoduleItem ID="IDS_122352I" SubslotNumber="32768" SubmoduleIdentNumber="0x0002" SupportedRT_Classes="RT_CLASS_1" TextId="TOK_DAP_InterfaceModule" PTP_BoundarySupported="true" DCP_BoundarySupported="true" IsochroneModeSupported="false" SupportedProtocols="SNMP;LLDP" NetworkComponentDiagnosisSupported="true" DCP_HelloSupported="true">
+							<ApplicationRelations NumberOfAR="2" StartupMode="Legacy;Advanced" NumberOfAdditionalInputCR="0" NumberOfAdditionalMulticastProviderCR="0" NumberOfAdditionalOutputCR="0" NumberOfMulticastConsumerCR="0" PullModuleAlarmSupported="true">
+								<TimingProperties SendClock="32 64 128" ReductionRatio="1 2 4 8 16 32 64 128 256 512" />
+							</ApplicationRelations>
+						</InterfaceSubmoduleItem>
+						<PortSubmoduleItem ID="IDS_122352P1" SubslotNumber="32769" SubmoduleIdentNumber="0x0003" MAUTypes="16" TextId="TOK_Port1" MaxPortRxDelay="198" MaxPortTxDelay="6" PortDeactivationSupported="false" LinkStateDiagnosisCapability="Up+Down">
+						<MAUTypeList>
+				<MAUTypeItem Value="16" AdjustSupported="true"/>
+				</MAUTypeList>
+				</PortSubmoduleItem>
+						</SystemDefinedSubmoduleList>
+					<Graphics>
+						<GraphicItemRef Type="DeviceSymbol" GraphicItemTarget="ID_Graph_2" />
+					</Graphics>
+				</DeviceAccessPointItem>
+				
+				
+			</DeviceAccessPointList>
+	        <!-- ============================================ -->
+	        <!--            List of modules                   -->
+	        <!-- ============================================ -->
+			<ModuleList>
+	
+				<!--**************************************************-->
+				<!--***** virtual input module IDM_1, 128 byte   *****-->
+				<!--***** (module ID compatible to EB200/400)    *****-->
+				<!--**************************************************-->
+				<ModuleItem ID="IDM_EKS_DATA_READ_128" ModuleIdentNumber="0x00000035">
+					<ModuleInfo CategoryRef="key_IO">
+						<Name TextId="T_key_I_128_byte"/>
+						<InfoText TextId="T_key_input_module_128_info"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<!--******* submodule 1 ******-->
+						<VirtualSubmoduleItem ID="ID_M1S1" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+							<IOData >
+								<Input Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="T_Input" Length="128"/>
+								</Input>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="3">
+										<Name TextId="T_general_parameter"/>
+
+										<Ref ValueItemTarget="HELP_STARTBYTE"  DataType="Integer8" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0..116" TextId="ID_STARTBYTE"/>
+										<Ref ValueItemTarget="HELP_READLENGTH" DataType="Integer8" ByteOffset="1" BitOffset="0" DefaultValue="124" AllowedValues="0..124" TextId="ID_READLENGTH"/>
+										<Ref ValueItemTarget="AlarmEnabling"   DataType="BitArea" BitLength="2" ByteOffset="2" BitOffset="0" DefaultValue="0" AllowedValues="0..2" TextId="ID_ALARM"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_key_I_128_byte"/>
+								<InfoText TextId="T_key_input_module_128_info"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<!--**************************************************-->
+				<!--***** virtual output module IDM_2, 128 byte  *****-->
+				<!--***** (module ID compatible to EB200/400)    *****-->
+				<!--**************************************************-->
+				<ModuleItem ID="IDM_EKS_DATA_WRITE_128" ModuleIdentNumber="0x00000036">
+					<ModuleInfo CategoryRef="key_IO">
+						<Name TextId="T_key_O_128_byte"/>
+						<InfoText TextId="T_key_output_module_128_info"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<!--******* submodule 1 ******-->
+						<VirtualSubmoduleItem ID="ID_M2S1" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+							<IOData >
+								<Output Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="T_Output" Length="128"/>
+								</Output>
+							</IOData>
+							<RecordDataList>
+							<ParameterRecordDataItem Index="1" Length="3">
+									<Name TextId="T_general_parameter"/>
+									<Ref ValueItemTarget="AlarmEnabling" DataType="BitArea" BitLength="2" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0..2" TextId="ID_ALARM"/>
+							</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_key_O_128_byte"/>
+								<InfoText TextId="T_key_output_module_128_info"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+								
+				<!--**************************************************-->
+				<!--***** virtual input module IDM_5, 8 + 1 byte   *****-->
+				<!--***** (module ID compatible to EB200/400)    *****-->
+				<!--**************************************************-->
+				<ModuleItem ID="IDM_EKS_DATA_READ_8" ModuleIdentNumber="0x0000003C">
+					<ModuleInfo CategoryRef="key_IO">
+						<Name TextId="T_key_I_8_byte"/>
+						<InfoText TextId="T_key_input_module_8_info"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<!--******* submodule 1 ******-->
+						<VirtualSubmoduleItem ID="ID_M5S1" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+							<IOData >
+								<Input Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="T_Input" Length="9"/>
+								</Input>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="3">
+										<Name TextId="T_general_parameter"/>
+
+										<Ref ValueItemTarget="HELP_STARTBYTE"  DataType="Integer8" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0..116" TextId="ID_STARTBYTE"/>
+										<Ref ValueItemTarget="HELP_READLENGTH" DataType="Integer8" ByteOffset="1" BitOffset="0" DefaultValue="8" AllowedValues="0..8" TextId="ID_READLENGTH"/>
+										<Ref ValueItemTarget="AlarmEnabling"   DataType="BitArea" BitLength="2" ByteOffset="2" BitOffset="0" DefaultValue="0" AllowedValues="0..2" TextId="ID_ALARM"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_key_I_8_byte"/>
+								<InfoText TextId="T_key_input_module_8_info"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<!--**************************************************-->
+				<!--***** virtual output module IDM_6, 8 + 4 byte  *****-->
+				<!--***** (module ID compatible to EB200/400)    *****-->
+				<!--**************************************************-->
+				<ModuleItem ID="IDM_EKS_DATA_WRITE_8" ModuleIdentNumber="0x00000040">
+					<ModuleInfo CategoryRef="key_IO">
+						<Name TextId="T_key_O_8_byte"/>
+						<InfoText TextId="T_key_output_module_8_info"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<!--******* submodule 1 ******-->
+						<VirtualSubmoduleItem ID="ID_M6S1" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+							<IOData >
+								<Output Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="T_Output" Length="12"/>
+								</Output>
+							</IOData>
+							<RecordDataList>
+							<ParameterRecordDataItem Index="1" Length="3">
+									<Name TextId="T_general_parameter"/>
+									<Ref ValueItemTarget="AlarmEnabling" DataType="BitArea" BitLength="2" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0..2" TextId="ID_ALARM"/>
+							</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_key_O_8_byte"/>
+								<InfoText TextId="T_key_output_module_8_info"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!--**************************************************-->
+				<!--***** virtual input module IDM_7, 16 + 1 byte   *****-->
+				<!--***** (module ID compatible to EB200/400)    *****-->
+				<!--**************************************************-->
+				<ModuleItem ID="IDM_EKS_DATA_READ_16" ModuleIdentNumber="0x0000003B">
+					<ModuleInfo CategoryRef="key_IO">
+						<Name TextId="T_key_I_16_byte"/>
+						<InfoText TextId="T_key_input_module_16_info"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<!--******* submodule 1 ******-->
+						<VirtualSubmoduleItem ID="ID_M7S1" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+							<IOData >
+								<Input Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="T_Input" Length="17"/>
+								</Input>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="3">
+										<Name TextId="T_general_parameter"/>
+
+										<Ref ValueItemTarget="HELP_STARTBYTE"  DataType="Integer8" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0..116" TextId="ID_STARTBYTE"/>
+										<Ref ValueItemTarget="HELP_READLENGTH" DataType="Integer8" ByteOffset="1" BitOffset="0" DefaultValue="16" AllowedValues="0..16" TextId="ID_READLENGTH"/>
+										<Ref ValueItemTarget="AlarmEnabling"   DataType="BitArea" BitLength="2" ByteOffset="2" BitOffset="0" DefaultValue="0" AllowedValues="0..2" TextId="ID_ALARM"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_key_I_16_byte"/>
+								<InfoText TextId="T_key_input_module_16_info"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<!--**************************************************-->
+				<!--***** virtual output module IDM_8, 16 + 4 byte  *****-->
+				<!--***** (module ID compatible to EB200/400)    *****-->
+				<!--**************************************************-->
+				<ModuleItem ID="IDM_EKS_DATA_WRITE_16" ModuleIdentNumber="0x0000003F">
+					<ModuleInfo CategoryRef="key_IO">
+						<Name TextId="T_key_O_16_byte"/>
+						<InfoText TextId="T_key_output_module_16_info"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<!--******* submodule 1 ******-->
+						<VirtualSubmoduleItem ID="ID_M8S1" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+							<IOData >
+								<Output Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="T_Output" Length="20"/>
+								</Output>
+							</IOData>
+							<RecordDataList>
+							<ParameterRecordDataItem Index="1" Length="3">
+									<Name TextId="T_general_parameter"/>
+									<Ref ValueItemTarget="AlarmEnabling" DataType="BitArea" BitLength="2" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0..2" TextId="ID_ALARM"/>
+							</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_key_O_16_byte"/>
+								<InfoText TextId="T_key_output_module_16_info"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				
+				<!--**************************************************-->
+				<!--***** virtual input module IDM_9, 32 + 1 byte   *****-->
+				<!--***** (module ID compatible to EB200/400)    *****-->
+				<!--**************************************************-->
+				<ModuleItem ID="IDM_EKS_DATA_READ_32" ModuleIdentNumber="0x0000003A">
+					<ModuleInfo CategoryRef="key_IO">
+						<Name TextId="T_key_I_32_byte"/>
+						<InfoText TextId="T_key_input_module_32_info"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<!--******* submodule 1 ******-->
+						<VirtualSubmoduleItem ID="ID_M9S1" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+							<IOData >
+								<Input Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="T_Input" Length="33"/>
+								</Input>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="3">
+										<Name TextId="T_general_parameter"/>
+
+										<Ref ValueItemTarget="HELP_STARTBYTE"  DataType="Integer8" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0..116" TextId="ID_STARTBYTE"/>
+										<Ref ValueItemTarget="HELP_READLENGTH" DataType="Integer8" ByteOffset="1" BitOffset="0" DefaultValue="32" AllowedValues="0..32" TextId="ID_READLENGTH"/>
+										<Ref ValueItemTarget="AlarmEnabling"   DataType="BitArea" BitLength="2" ByteOffset="2" BitOffset="0" DefaultValue="0" AllowedValues="0..2" TextId="ID_ALARM"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_key_I_32_byte"/>
+								<InfoText TextId="T_key_input_module_32_info"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<!--**************************************************-->
+				<!--***** virtual output module IDM_10, 32 + 4 byte  *****-->
+				<!--***** (module ID compatible to EB200/400)    *****-->
+				<!--**************************************************-->
+				<ModuleItem ID="IDM_EKS_DATA_WRITE_32" ModuleIdentNumber="0x0000003E">
+					<ModuleInfo CategoryRef="key_IO">
+						<Name TextId="T_key_O_32_byte"/>
+						<InfoText TextId="T_key_output_module_32_info"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<!--******* submodule 1 ******-->
+						<VirtualSubmoduleItem ID="ID_M10S1" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+							<IOData >
+								<Output Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="T_Output" Length="36"/>
+								</Output>
+							</IOData>
+							<RecordDataList>
+							<ParameterRecordDataItem Index="1" Length="3">
+									<Name TextId="T_general_parameter"/>
+									<Ref ValueItemTarget="AlarmEnabling" DataType="BitArea" BitLength="2" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0..2" TextId="ID_ALARM"/>
+							</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_key_O_32_byte"/>
+								<InfoText TextId="T_key_output_module_32_info"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!--**************************************************-->
+				<!--***** virtual input module IDM_11, 64 + 1 byte   *****-->
+				<!--***** (module ID compatible to EB200/400)    *****-->
+				<!--**************************************************-->
+				<ModuleItem ID="IDM_EKS_DATA_READ_64" ModuleIdentNumber="0x00000039">
+					<ModuleInfo CategoryRef="key_IO">
+						<Name TextId="T_key_I_64_byte"/>
+						<InfoText TextId="T_key_input_module_64_info"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<!--******* submodule 1 ******-->
+						<VirtualSubmoduleItem ID="ID_M11S1" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+							<IOData >
+								<Input Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="T_Input" Length="65"/>
+								</Input>
+							</IOData>
+							<RecordDataList>
+								<ParameterRecordDataItem Index="1" Length="3">
+										<Name TextId="T_general_parameter"/>
+
+										<Ref ValueItemTarget="HELP_STARTBYTE"  DataType="Integer8" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0..116" TextId="ID_STARTBYTE"/>
+										<Ref ValueItemTarget="HELP_READLENGTH" DataType="Integer8" ByteOffset="1" BitOffset="0" DefaultValue="64" AllowedValues="0..64" TextId="ID_READLENGTH"/>
+										<Ref ValueItemTarget="AlarmEnabling"   DataType="BitArea" BitLength="2" ByteOffset="2" BitOffset="0" DefaultValue="0" AllowedValues="0..2" TextId="ID_ALARM"/>
+								</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_key_I_64_byte"/>
+								<InfoText TextId="T_key_input_module_64_info"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+				<!--**************************************************-->
+				<!--***** virtual output module IDM_12, 64 + 4 byte  *****-->
+				<!--***** (module ID compatible to EB200/400)    *****-->
+				<!--**************************************************-->
+				<ModuleItem ID="IDM_EKS_DATA_WRITE_64" ModuleIdentNumber="0x0000003D">
+					<ModuleInfo CategoryRef="key_IO">
+						<Name TextId="T_key_O_64_byte"/>
+						<InfoText TextId="T_key_output_module_64_info"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<!--******* submodule 1 ******-->
+						<VirtualSubmoduleItem ID="ID_M12S1" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+							<IOData >
+								<Output Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="T_Output" Length="68"/>
+								</Output>
+							</IOData>
+							<RecordDataList>
+							<ParameterRecordDataItem Index="1" Length="3">
+									<Name TextId="T_general_parameter"/>
+									<Ref ValueItemTarget="AlarmEnabling" DataType="BitArea" BitLength="2" ByteOffset="0" BitOffset="0" DefaultValue="0" AllowedValues="0..2" TextId="ID_ALARM"/>
+							</ParameterRecordDataItem>
+							</RecordDataList>
+							<ModuleInfo>
+								<Name TextId="T_key_O_64_byte"/>
+								<InfoText TextId="T_key_output_module_64_info"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+					
+				<!--**************************************************-->
+				<!--***** virtual input module IDM_EKS_SERIALNUMBER, 9 byte   *****-->
+				<!--***** (module ID compatible to EB200/400)    *****-->
+				<!--**************************************************-->
+				<ModuleItem ID="IDM_EKS_SERIALNUMBER" ModuleIdentNumber="0x00000037">
+					<ModuleInfo CategoryRef="key_IO">
+						<Name TextId="T_key_I_serial_byte"/>
+						<InfoText TextId="T_key_input_module_serial_info"/>
+						<OrderNumber Value="999999"/>
+						<HardwareRelease Value="1.0"/>
+						<SoftwareRelease Value="1.0"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<!--******* submodule 1 ******-->
+						<VirtualSubmoduleItem ID="ID_M13S1" SubmoduleIdentNumber="0x00000001" MayIssueProcessAlarm="false">
+							<IOData >
+								<Input Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="T_Input" Length="9"/>
+								</Input>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_key_I_serial_byte"/>
+								<InfoText TextId="T_key_input_module_serial_info"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+				<!--**************************************************-->
+				<!--***** virtual input module IDM_EKS_IO, 1/1 byte   *****-->
+				<!--***** (module ID compatible to EB200/400)    *****-->
+				<!--**************************************************-->
+				<ModuleItem ID="IDM_EKS_IO" ModuleIdentNumber="0x00000038">
+					<ModuleInfo CategoryRef="key_IO">
+						<Name TextId="T_key_I_IO_byte"/>
+						<InfoText TextId="T_key_input_module_IO_info"/>
+						<OrderNumber Value="117687"/>
+						<HardwareRelease Value="1.0"/>
+						<SoftwareRelease Value="1.0"/>
+					</ModuleInfo>
+					<VirtualSubmoduleList>
+						<!--******* submodule 1 ******-->
+						<VirtualSubmoduleItem ID="ID_M14S1" SubmoduleIdentNumber="0x00000001" API="0" MayIssueProcessAlarm="false">
+							<IOData >
+								<Input Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="T_Input" Length="1"/>
+								</Input>
+								<Output Consistency="All items consistency">
+									<DataItem DataType="OctetString" TextId="T_Output" Length="1"/>
+								</Output>
+							</IOData>
+							<ModuleInfo>
+								<Name TextId="T_key_I_IO_byte"/>
+								<InfoText TextId="T_key_input_module_IO_info"/>
+							</ModuleInfo>
+						</VirtualSubmoduleItem>
+					</VirtualSubmoduleList>
+				</ModuleItem>
+
+
+
+
+			</ModuleList>
+			
+						<!-- ============================================================================================ -->
+			<!--      value list, channel-diagnosis list, graphic List, category List                         -->
+			<!-- ============================================================================================ -->
+			<ValueList>
+							
+        <ValueItem ID="AlarmEnabling">
+            <Help TextId="IDD_HELP_ALARM"/>
+            <Assignments>
+                <Assign Content="0" TextId="AlarmDeactivated"/>
+                <Assign Content="1" TextId="EnableWithConfirmation"/>
+                <Assign Content="2" TextId="EnableWithoutConfirmation"/>
+            </Assignments>
+        </ValueItem>
+        
+        <ValueItem ID="HELP_STARTBYTE">
+             <Help TextId="IDD_HELP_STARTBYTE"/>
+        </ValueItem>
+        
+        <ValueItem ID="HELP_READLENGTH">
+             <Help TextId="IDD_HELP_READLENGTH"/>
+        </ValueItem>
+        
+        
+        
+       </ValueList>
+
+	        <!-- ============================================ -->
+	        <!--       Channel diagnosis list                 -->
+	        <!-- ============================================ -->
+			<ChannelDiagList>
+				<ChannelDiagItem ErrorType="256">
+					<Name TextId="T_Parameter_Faulty_Read_Length"/>
+					  <ExtChannelDiagList>
+					    <ExtChannelDiagItem ErrorType="1">
+					      <Name TextId="Faulty_Read_Length"/>
+					      <ExtChannelAddValue>
+					        <DataItem Id="1" DataType="Unsigned16"/>
+							<DataItem Id="2" DataType="Unsigned16"/>
+					      </ExtChannelAddValue>
+					    </ExtChannelDiagItem>
+					  </ExtChannelDiagList>
+					</ChannelDiagItem>
+					<ChannelDiagItem ErrorType="257">
+					<Name TextId="T_Parameter_Faulty_Write_Length"/>
+					  <ExtChannelDiagList>
+					    <ExtChannelDiagItem ErrorType="1">
+					      <Name TextId="Faulty_Write_Length"/>
+					      <ExtChannelAddValue>
+					        <DataItem Id="1" DataType="Unsigned16"/>
+							<DataItem Id="2" DataType="Unsigned16"/>
+					      </ExtChannelAddValue>
+					    </ExtChannelDiagItem>
+					  </ExtChannelDiagList>
+					</ChannelDiagItem>
+					<ChannelDiagItem ErrorType="258">
+					<Name TextId="T_Parameter_Faulty_Byte_Number"/>
+					  <ExtChannelDiagList>
+					    <ExtChannelDiagItem ErrorType="1">
+					      <Name TextId="Faulty_Byte_Number"/>
+					      <ExtChannelAddValue>
+					        <DataItem Id="1" DataType="Unsigned16"/>
+							<DataItem Id="2" DataType="Unsigned16"/>
+					      </ExtChannelAddValue>
+					    </ExtChannelDiagItem>
+					  </ExtChannelDiagList>
+					</ChannelDiagItem>
+					<ChannelDiagItem ErrorType="259">
+					<Name TextId="T_Parameter_Faulty_Startaddress"/>
+					  <ExtChannelDiagList>
+					    <ExtChannelDiagItem ErrorType="1">
+					      <Name TextId="Faulty_Startaddress"/>
+					      <ExtChannelAddValue>
+					        <DataItem Id="1" DataType="Unsigned16"/>
+							<DataItem Id="2" DataType="Unsigned16"/>
+					      </ExtChannelAddValue>
+					    </ExtChannelDiagItem>
+					  </ExtChannelDiagList>
+					</ChannelDiagItem>
+					<ChannelDiagItem ErrorType="260">
+					<Name TextId="T_Parameter_Key_Gone"/>
+					  <ExtChannelDiagList>
+					    <ExtChannelDiagItem ErrorType="1">
+					      <Name TextId="Key_Gone"/>
+					    </ExtChannelDiagItem>
+					  </ExtChannelDiagList>
+					</ChannelDiagItem>
+					<ChannelDiagItem ErrorType="261">
+					<Name TextId="T_Parameter_General_KEy_Error"/>
+					  <ExtChannelDiagList>
+					    <ExtChannelDiagItem ErrorType="1">
+					      <Name TextId="General_Error"/>
+					    </ExtChannelDiagItem>
+					  </ExtChannelDiagList>
+					</ChannelDiagItem>
+					<ChannelDiagItem ErrorType="262">
+					<Name TextId="T_Parameter_Write_Protected"/>
+					  <ExtChannelDiagList>
+					    <ExtChannelDiagItem ErrorType="1">
+					      <Name TextId="Write_Protected"/>
+					    </ExtChannelDiagItem>
+					  </ExtChannelDiagList>
+					</ChannelDiagItem>
+					<ChannelDiagItem ErrorType="263">
+					<Name TextId="T_ModuleChangedNeedsReboot"/>
+					</ChannelDiagItem>
+					<ChannelDiagItem ErrorType="264">
+					<Name TextId="T_ModuleParamChangedNeedsReboot"/>
+					</ChannelDiagItem>
+					
+			</ChannelDiagList>
+
+			<GraphicsList>
+				<GraphicItem ID="ID_Graph_1" GraphicFile="GSDML-0135-0201-EKS_PN" />
+				<GraphicItem ID="ID_Graph_2" GraphicFile="GSDML-0135-0202-EKS_PN_modular" />
+			</GraphicsList>
+			<CategoryList>
+				<CategoryItem ID="key_IO" TextId="T_key_IO"/>
+			</CategoryList>
+	        <!-- ============================================ -->
+	        <!--     language dependent text lists            -->
+	        <!-- ============================================ -->
+			<ExternalTextList>
+	            <!-- ============================= -->
+	            <!--    primary language: english  -->
+	            <!-- ============================= -->
+				<PrimaryLanguage>
+				
+				<Text TextId="T_PROFINET_IO_DEV_DESCRIPTION" Value="EKS PROFINET"/>
+					<Text TextId="TOK_TextId_Module_Tasten" Value="Tasten-Modul" />
+					<Text TextId="TOK_InfoTextId_Module_Tasten" Value="2 Byte E / 1 Byte A" />
+					<Text TextId="TOK_Input_DataItem_1" Value="Input 1 Byte" />
+					<Text TextId="TOK_Output_DataItem_1" Value="Output 1 Byte" />
+					<Text TextId="TOK_Input_DataItem_2" Value="Input 2 Byte" />
+					<Text TextId="TOK_Output_DataItem_2" Value="Output 2 Byte" />
+
+					
+	
+	<Text TextId="T_key_I_128_byte" Value="Read: 128 bytes"/>
+	<Text TextId="T_key_O_128_byte" Value="Write: 128 bytes"/>
+	
+	<Text TextId="T_key_I_8_byte" Value="Read: 009 bytes"/>
+	<Text TextId="T_key_O_8_byte" Value="Write: 012 bytes"/>
+	
+		<Text TextId="T_key_I_16_byte" Value="Read: 017 bytes"/>
+	<Text TextId="T_key_O_16_byte" Value="Write: 020 bytes"/>
+	
+		<Text TextId="T_key_I_32_byte" Value="Read: 033 bytes"/>
+	<Text TextId="T_key_O_32_byte" Value="Write: 036 bytes"/>
+	
+		<Text TextId="T_key_I_64_byte" Value="Read: 065 bytes"/>
+	<Text TextId="T_key_O_64_byte" Value="Write: 068 bytes"/>
+
+	<Text TextId="T_key_input_module_128_info" Value="Input module for reading of Electronic-Key, 128 bytes data."/>
+	<Text TextId="T_key_output_module_128_info" Value="Output module for writing of Electronic-Key, 128 bytes data."/>
+
+	<Text TextId="T_key_input_module_64_info" Value="Input module for reading of Electronic-Key, 64 bytes data + 1 byte status."/>
+	<Text TextId="T_key_output_module_64_info" Value="Output module for writing of Electronic-Key, 64 bytes data + 4 byte status."/>
+
+	<Text TextId="T_key_input_module_32_info" Value="Input module for reading of Electronic-Key, 32 bytes data + 1 byte status."/>
+	<Text TextId="T_key_output_module_32_info" Value="Output module for writing of Electronic-Key, 32 bytes data + 4 byte status."/>
+
+	<Text TextId="T_key_input_module_16_info" Value="Input module for reading of Electronic-Key, 16 bytes data + 1 byte status."/>
+	<Text TextId="T_key_output_module_16_info" Value="Output module for writing of Electronic-Key, 16 bytes data + 4 byte status."/>
+
+	<Text TextId="T_key_input_module_8_info" Value="Input module for reading of Electronic-Key, 8 bytes data + 1 byte status."/>
+	<Text TextId="T_key_output_module_8_info" Value="Output module for writing of Electronic-Key, 8 bytes data + 4 byte status."/>
+					
+					<!-- Hilfetexte (Tool-Tip) -->
+					<Text TextId="IDD_HELP_ALARM" Value="Select the type of alarm you would like to use."/>
+					<Text TextId="IDD_HELP_STARTBYTE" Value="First byte read in the memory area of the Electronic-Key."/>
+					<Text TextId="IDD_HELP_READLENGTH" Value="Number of bytes read from start address."/>
+				
+								<Text TextId="T_key_I_serial_byte" Value="Serialnumber"/>
+				<Text TextId="T_key_input_module_serial_info" Value="Serialnumber of Key."/>
+				
+				<Text TextId="T_key_I_IO_byte" Value="I/O Data"/>
+				<Text TextId="T_key_input_module_IO_info" Value="I/O Data of EKS Device."/>
+				
+				<Text TextId="TOK_EKS_106306" Value="EKS-A-IIXA-G01-ST02/03/04"/>
+				<Text TextId="TOK_ModInfo_InfoTextId_EKS_106306" Value="EKS PN FSA" />
+				
+				<Text TextId="TOK_EKS_106305" Value="EKS-A-IIX-G01-ST02/03"/>
+				<Text TextId="TOK_ModInfo_InfoTextId_EKS_106305" Value="EKS PN" />
+				
+								<Text TextId="TOK_EKS_122353" Value="EKS-A-AIXA-G18"/>
+				<Text TextId="TOK_ModInfo_InfoTextId_EKS_122353" Value="EKS PN FSA" />
+				
+				<Text TextId="TOK_EKS_122352" Value="EKS-A-AIX-G18"/>
+				<Text TextId="TOK_ModInfo_InfoTextId_EKS_122352" Value="EKS PN" />
+				
+					<!-- Texte fuer Projektierungseinstellungen -->
+
+	<Text TextId="ID_ALARM" Value="Alarm setting"/>
+	<Text TextId="ID_STARTBYTE" Value="Start address"/>
+	<Text TextId="ID_READLENGTH" Value="Number of bytes"/>
+	
+	<!-- Texte fuer Alarmeinstellungen -->
+	<Text TextId="AlarmDeactivated" Value="Deactivated"/>
+	<Text TextId="EnableWithConfirmation" Value="Activate process alarm"/>
+	<Text TextId="EnableWithoutConfirmation" Value="Activate diagnostics alarm"/>
+				
+					<!--**** Baugruppeneinteilung ****-->
+	<Text TextId="T_key_IO" Value="Electronic-Key modules"/>
+	
+	<!--**** sonstige Textdefinitionen ****-->
+	<Text TextId="T_Input" Value="Inputs"/>
+	<Text TextId="T_Output" Value="Outputs"/>
+	
+				
+									<!--port name-->
+					<Text TextId="TOK_Subslot_1" Value="DAP" />
+					<Text TextId="TOK_Subslot_8000" Value="X1" />
+					<Text TextId="TOK_Subslot_8001" Value="X1 P1" />
+					<Text TextId="TOK_Subslot_8002" Value="X1 P2" />
+					<Text TextId="TOK_DAP_InterfaceModule" Value="Interface" />
+					<Text TextId="TOK_Port1" Value="Port 1" />
+					<Text TextId="TOK_Port2" Value="Port 2" />
+					<Text TextId="TOK_Port1_POF" Value="Port 1" />
+					<Text TextId="TOK_Port2_POF" Value="Port 2" />
+
+				
+				
+				
+				
+				
+									<!--errortype name-->
+	<Text TextId="T_Parameter_Faulty_Read_Length" Value="Error on the number of bytes while reading:"/>
+	<Text TextId="Faulty_Read_Length" Value="max. allowed number of bytes while reading is {1:d}."/>
+	
+	<Text TextId="T_Parameter_Faulty_Write_Length" Value="Error on the number of bytes while writing:"/>
+	<Text TextId="Faulty_Write_Length" Value="max. allowed number of bytes while writing is {1:d}."/>
+	
+	<Text TextId="T_Parameter_Faulty_Byte_Number" Value="Error on the number of bytes while writing:"/>
+	<Text TextId="Faulty_Byte_Number" Value="the number of bytes must be dividable by 4. You tried to write {1:d} bytes."/>
+	
+	<Text TextId="T_Parameter_Key_Gone" Value="Error while reading/writing Electronic-Key:"/>
+	<Text TextId="Key_Gone" Value="Electronic-Key not in the operating distance."/>
+	
+	<Text TextId="T_Parameter_General_KEy_Error" Value="General Electronic-Key communication error"/>
+	<Text TextId="General_Error" Value="(renewed write or read operation necessary)."/>
+	
+	<Text TextId="T_Parameter_Write_Protected" Value="Write attempt despite enabled write protection."/>
+	<Text TextId="Write_Protected" Value="(deactivate write protection and reboot device)."/>
+	
+	<Text TextId="T_Parameter_Faulty_Startaddress" Value="Error on start address while writing:"/>
+	<Text TextId="Faulty_Startaddress" Value="the start address must be dividable by 4. You tried to write from address {1:d}."/>
+
+	<Text TextId="T_ModuleChangedNeedsReboot" Value="Module of GSDML file was exchanged, RESET required."/>
+	
+	<Text TextId="T_ModuleParamChangedNeedsReboot" Value="Parameters within a module were changed, RESET required."/>
+	
+	
+									<!--other text definitions-->
+					<Text TextId="T_general_parameter" Value="general parameter"/>
+				</PrimaryLanguage>
+	            <!-- ==================== -->
+	            <!--      german          -->
+	            <!-- ==================== -->
+				<Language xml:lang="de">
+				
+	
+				<Text TextId="T_PROFINET_IO_DEV_DESCRIPTION" Value="EKS PROFINET"/>
+									<Text TextId="TOK_TextId_Module_Tasten" Value="Tasten-Modul" />
+					<Text TextId="TOK_InfoTextId_Module_Tasten" Value="2 Byte E / 1 Byte A" />
+					<Text TextId="TOK_Input_DataItem_1" Value="Eingänge 1 Byte" />
+					<Text TextId="TOK_Output_DataItem_1" Value="Ausgänge 1 Byte" />
+					<Text TextId="TOK_Input_DataItem_2" Value="Eingänge 2 Byte" />
+					<Text TextId="TOK_Output_DataItem_2" Value="Ausgänge 2 Byte" />
+				
+		
+									<!-- Hilfetexte (Tool-Tip) -->
+					<Text TextId="IDD_HELP_ALARM" Value="Select the type of alarm you would like to use."/>
+					<Text TextId="IDD_HELP_STARTBYTE" Value="First byte read in the memory area of the Electronic-Key."/>
+					<Text TextId="IDD_HELP_READLENGTH" Value="Number of bytes read from start address."/>
+				
+			
+				
+								<Text TextId="T_key_I_serial_byte" Value="Serialnumber"/>
+				<Text TextId="T_key_input_module_serial_info" Value="Serialnumber of Key."/>
+				
+				<Text TextId="T_key_I_IO_byte" Value="I/O Data"/>
+				<Text TextId="T_key_input_module_IO_info" Value="I/O Data of EKS Device."/>
+			
+				<Text TextId="TOK_EKS_106306" Value="EKS-A-IIXA-G01-ST02/03/04"/>
+				<Text TextId="TOK_ModInfo_InfoTextId_EKS_106306" Value="EKS PN FSA" />
+				
+				<Text TextId="TOK_EKS_106305" Value="EKS-A-IIX-G01-ST02/03"/>
+				<Text TextId="TOK_ModInfo_InfoTextId_EKS_106305" Value="EKS PN" />
+				
+								<Text TextId="TOK_EKS_122353" Value="EKS-A-AIXA-G18"/>
+				<Text TextId="TOK_ModInfo_InfoTextId_EKS_122353" Value="EKS PN FSA" />
+				
+				<Text TextId="TOK_EKS_122352" Value="EKS-A-AIX-G18"/>
+				<Text TextId="TOK_ModInfo_InfoTextId_EKS_122352" Value="EKS PN" />
+				
+				
+	<Text TextId="T_key_I_128_byte" Value="Lesen: 128 Bytes"/>
+	<Text TextId="T_key_O_128_byte" Value="Schreiben: 128 Bytes"/>
+	
+	<Text TextId="T_key_I_8_byte" Value="Lesen: 009 Bytes"/>
+	<Text TextId="T_key_O_8_byte" Value="Schreiben: 012 Bytes"/>
+	
+	<Text TextId="T_key_I_16_byte" Value="Lesen: 017 Bytes"/>
+	<Text TextId="T_key_O_16_byte" Value="Schreiben: 020 Bytes"/>
+	
+	<Text TextId="T_key_I_32_byte" Value="Lesen: 033 Bytes"/>
+	<Text TextId="T_key_O_32_byte" Value="Schreiben: 036 Bytes"/>
+	
+	<Text TextId="T_key_I_64_byte" Value="Lesen: 065 Bytes"/>
+	<Text TextId="T_key_O_64_byte" Value="Schreiben: 068 Bytes"/>
+
+
+	<Text TextId="T_key_input_module_128_info" Value="Eingangs-Modul zum Lesen des Schlüssels, 128 Bytes Daten."/>
+	<Text TextId="T_key_output_module_128_info" Value="Ausgangs-Modul zum Schreiben des Schlüssels, 128 Bytes Daten."/>
+
+	<Text TextId="T_key_input_module_64_info" Value="Eingangs-Modul zum Lesen des Schlüssels, 64 Bytes Daten + 1 Byte Status."/>
+	<Text TextId="T_key_output_module_64_info" Value="Ausgangs-Modul zum Schreiben des Schlüssels, 64 Bytes Daten + 4 Byte Status."/>
+
+	<Text TextId="T_key_input_module_32_info" Value="Eingangs-Modul zum Lesen des Schlüssels, 32 Bytes Daten + 1 Byte Status."/>
+	<Text TextId="T_key_output_module_32_info" Value="Ausgangs-Modul zum Schreiben des Schlüssels, 32 Bytes Daten + 4 Byte Status."/>
+
+	<Text TextId="T_key_input_module_16_info" Value="Eingangs-Modul zum Lesen des Schlüssels, 16 Bytes Daten + 1 Byte Status."/>
+	<Text TextId="T_key_output_module_16_info" Value="Ausgangs-Modul zum Schreiben des Schlüssels, 16 Bytes Daten + 4 Byte Status."/>
+
+	<Text TextId="T_key_input_module_8_info" Value="Eingangs-Modul zum Lesen des Schlüssels, 8 Bytes Daten + 1 Byte Status."/>
+	<Text TextId="T_key_output_module_8_info" Value="Ausgangs-Modul zum Schreiben des Schlüssels, 8 Bytes Daten + 4 Byte Status."/>
+				
+				
+					<!-- Texte fuer Projektierungseinstellungen -->
+
+	<Text TextId="ID_ALARM" Value="Alarm setting"/>
+	<Text TextId="ID_STARTBYTE" Value="Start address"/>
+	<Text TextId="ID_READLENGTH" Value="Number of bytes"/>
+	
+	<!-- Texte fuer Alarmeinstellungen -->
+	<Text TextId="AlarmDeactivated" Value="Deactivated"/>
+	<Text TextId="EnableWithConfirmation" Value="Activate process alarm"/>
+	<Text TextId="EnableWithoutConfirmation" Value="Activate diagnostics alarm"/>
+				
+					<!--**** Baugruppeneinteilung ****-->
+	<Text TextId="T_key_IO" Value="Electronic-Key modules"/>
+	
+	<!--**** sonstige Textdefinitionen ****-->
+	<Text TextId="T_Input" Value="Inputs"/>
+	<Text TextId="T_Output" Value="Outputs"/>
+				
+				
+				
+				<!--port name-->
+					<Text TextId="TOK_Subslot_1" Value="DAP" />
+					<Text TextId="TOK_Subslot_8000" Value="X1" />
+					<Text TextId="TOK_Subslot_8001" Value="X1 P1" />
+					<Text TextId="TOK_Subslot_8002" Value="X1 P2" />
+					<Text TextId="TOK_DAP_InterfaceModule" Value="Interface" />
+					<Text TextId="TOK_Port1" Value="Port 1" />
+					<Text TextId="TOK_Port2" Value="Port 2" />
+					<Text TextId="TOK_Port1_POF" Value="Port 1" />
+					<Text TextId="TOK_Port2_POF" Value="Port 2" />
+				
+									<!--errortype name-->
+	<Text TextId="T_Parameter_Faulty_Read_Length" Value="Fehler der Byte-Anzahl beim Lesen:"/>
+	<Text TextId="Faulty_Read_Length" Value="max. erlaubte Byte-Anzahl beim Lesen ist {1:d}."/>
+	
+	<Text TextId="T_Parameter_Faulty_Write_Length" Value="Fehler der Byte-Anzahl beim Schreiben:"/>
+	<Text TextId="Faulty_Write_Length" Value="max. erlaubte Byte-Anzahl beim Schreiben ist {1:d}."/>
+	
+	<Text TextId="T_Parameter_Faulty_Byte_Number" Value="Fehler der Byte-Anzahl beim Schreiben:"/>
+	<Text TextId="Faulty_Byte_Number" Value="die Byte-Anzahl muss durch 4 teilbar sein. Sie haben versucht {1:d} Bytes zu schreiben."/>
+	
+	<Text TextId="T_Parameter_Key_Gone" Value="Fehler beim Lesen/Schreiben des Schlüssels:"/>
+	<Text TextId="Key_Gone" Value="Schlüssel nicht im Ansprechbereich."/>
+	
+	<Text TextId="T_Parameter_General_KEy_Error" Value="Allgemeiner Schlüssel Kommunikations-Fehler"/>
+	<Text TextId="General_Error" Value="(erneuter Schreib- oder Lesevorgang notwendig)."/>
+	
+	<Text TextId="T_Parameter_Write_Protected" Value="Schreibversuch trotz eingestelltem Schreibschutz"/>
+	<Text TextId="Write_Protected" Value="(Schreibschutz deaktivieren und Gerät neu starten)."/>
+	
+	<Text TextId="T_Parameter_Faulty_Startaddress" Value="Fehler der Start-Adresse beim Schreiben:"/>
+	<Text TextId="Faulty_Startaddress" Value="die Start-Adresse muss durch 4 teilbar sein. Sie haben versucht ab Adresse {1:d} zu schreiben."/>
+	
+	<Text TextId="T_ModuleChangedNeedsReboot" Value="Modul der GSDML-Datei wurde getauscht, RESET erforderlich."/>
+	<Text TextId="T_ModuleParamChangedNeedsReboot" Value="Parameter innerhalb eines Moduls wurden geändert, RESET erforderlich."/>
+					<!--other text definitions-->
+					<Text TextId="T_general_parameter" Value="Allgemeiner Parameter"/>
+				</Language>
+			</ExternalTextList>
+		</ApplicationProcess>
+	</ProfileBody>
+</ISO15745Profile>
